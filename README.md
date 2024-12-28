@@ -46,7 +46,7 @@ Make sure you have the following installed on your system:
 - **Python 3.x**: [Download](https://www.python.org/)
 - **MongoDB**: [Download](https://www.mongodb.com/)
 - **Google Chrome**: [Download](https://www.google.com/chrome/)
-- **ChromeDriver**: [Download](https://chromedriver.chromium.org/)
+- **ChromeDriver**: [Download](https://developer.chrome.com/docs/chromedriver/downloads/)
 
 ### 2️⃣ Installation Steps
 
@@ -72,6 +72,9 @@ Start your MongoDB server and ensure it's running on the default port (`27017`).
 #### Add ChromeDriver
 Place the compatible **ChromeDriver** in the `python/` folder.
 
+Here’s the updated **Proxy Configuration** section with ProxyMesh included:
+
+
 #### Configure Proxy (Optional)
 If you want to use a proxy:
 1. Edit the `main.py` file and add your proxy credentials:
@@ -81,6 +84,14 @@ If you want to use a proxy:
    PROXY_HOST = "Your_PROXY_HOST"
    PROXY_PORT = "Your_PROXY_PORT"
    ```
+   Example using **ProxyMesh**:
+   ```python
+   PROXY_USERNAME = "proxymesh_username"
+   PROXY_PASSWORD = "proxymesh_password"
+   PROXY_HOST = "us.proxymesh.com"
+   PROXY_PORT = "31280"
+   ```
+   We tested this project with [ProxyMesh](https://proxymesh.com/), and it worked seamlessly for anonymous scraping.
 
 2. If you **don't want to use a proxy**, remove the `proxy_plugin_path` from the `setup_driver()` function in `main.py`:
    ```python
